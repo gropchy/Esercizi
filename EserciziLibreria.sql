@@ -99,6 +99,11 @@ select Romanzo.Titolo
 from Romanzo, Autore
 where Romanzo.Autore=Autore.ID and Autore.Nome="Alessandro" and Autore.Cognome="Manzoni"
 
+/*18. Titoli dei romanzi scritti da Don DeLillo, escludendo eventuali duplicati*/
+select distinct Romanzo.Titolo
+from Romanzo, Autore
+where Romanzo.Autore=Autore.ID and Autore.Nome="Don" and Autore.Cognome="DeLillo"
+
 
 
 
