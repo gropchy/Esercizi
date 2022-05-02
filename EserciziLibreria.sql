@@ -78,6 +78,11 @@ select Romanzo.Titolo
 from Romanzo
 where Romanzo.Titolo like "%i_"
 
+/*14. Romanzi il cui titolo termina per “blues”*/
+select Romanzo.Titolo
+from Romanzo
+where Romanzo.Titolo like "%blues"
+
 
 
 
