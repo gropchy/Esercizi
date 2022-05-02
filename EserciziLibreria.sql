@@ -15,3 +15,9 @@ select Romanzo.Titolo
 from Romanzo
 where Romanzo.AnnoPubblicazione>=1901 and Romanzo.AnnoPubblicazione<=2000
 
+/*4-Autore (cioè Nome e Cognome) e Titolo di tutti i romanzi*/
+
+select Autore.nome, Autore.cognome, Romanzo.titolo
+from Autore, Romanzo
+where Romanzo.Autore=Autore.ID
+
