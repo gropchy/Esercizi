@@ -15,3 +15,7 @@ select distinct Genia.Genitore
 from Persona, Genia
 where Persona.Nome = Genia.Genitore and Persona.Età > 50
 
+/* Query 4 - vogliamo sapere chi sono i nonni */
+select distinct F.Genitore
+from genia F join genia G on G.Genitore = F.Figlio
+
