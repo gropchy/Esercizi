@@ -88,6 +88,11 @@ select Romanzo.Titolo
 from Romanzo
 where Romanzo.AnnoPubblicazione>=1901 and Romanzo.AnnoPubblicazione<=2000 and Romanzo.Titolo like "%Zeno%"
 
+/*16. Romanzi pubblicati prima del 1900 e con la parola “Sposi” nel titolo, scritta l’iniziale maiuscola o minuscola*/
+select Romanzo.Titolo
+from Romanzo
+where Romanzo.AnnoPubblicazione<1900 and (Romanzo.Titolo like "%Sposi%" or Romanzo.Titolo like "%sposi%")
+
 
 
 
