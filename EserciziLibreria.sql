@@ -104,6 +104,10 @@ select distinct Romanzo.Titolo
 from Romanzo, Autore
 where Romanzo.Autore=Autore.ID and Autore.Nome="Don" and Autore.Cognome="DeLillo"
 
+/*19. Romanzi con il personaggio di Harry Potter*/
+select Romanzo.Titolo
+from Romanzo, PersonaggioRomanzo, Personaggio 
+where PersonaggioRomanzo.Romanzo=Romanzo.ID and PersonaggioRomanzo.Personaggio=Personaggio.ID and Personaggio.Nome="Harry" and Personaggio.Cognome="Potter"
 
 
 
