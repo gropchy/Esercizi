@@ -68,6 +68,12 @@ select Romanzo.Titolo
 from Romanzo
 where Romanzo.Titolo like "guerra%"
 
+/*12. Romanzi con la parola “Sposi” nel titolo*/
+select Romanzo.Titolo
+from Romanzo
+where Romanzo.Titolo like "%Sposi%"
+
+
 
 
 
