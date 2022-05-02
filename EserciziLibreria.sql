@@ -83,6 +83,11 @@ select Romanzo.Titolo
 from Romanzo
 where Romanzo.Titolo like "%blues"
 
+/*15. Romanzi pubblicati del ventesimo secolo e con la parola “Zeno” nel titolo*/
+select Romanzo.Titolo
+from Romanzo
+where Romanzo.AnnoPubblicazione>=1901 and Romanzo.AnnoPubblicazione<=2000 and Romanzo.Titolo like "%Zeno%"
+
 
 
 
