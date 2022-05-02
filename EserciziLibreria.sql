@@ -21,3 +21,14 @@ select Autore.nome, Autore.cognome, Romanzo.titolo
 from Autore, Romanzo
 where Romanzo.Autore=Autore.ID
 
+/*5-Autore (cioè Nome e Cognome) e Titolo di tutti i romanzi, ordinati per cognome e nome
+dell'autore*/
+
+
+select Autore.Nome, Autore.Cognome, Romanzo.Titolo
+from Romanzo, Autore
+where Romanzo.Autore=Autore.ID
+order by Autore.Cognome, Autore.Nome
+
+
+
