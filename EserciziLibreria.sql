@@ -38,6 +38,15 @@ select Autore.Nome, Autore.Cognome, Romanzo.Titolo
 from Romanzo.Autore=Autore.ID and Autore.Nazionalità=’Russa’
 order by Autore.Cognome, Autore.Nome
 
+/* 7-Titolo dei romanzi di autori nati nel ventesimo secolo, 
+ordinati per cognome e nome dell’autore e – 
+a parità di autore – di data di pubblicazione */
+
+select Romanzo.Titolo
+from Romanzo, Autore 
+where Romanzo.Autore=Autore.ID and Autore.DataNascita>=1901 and Autore.DataNascita<=2000
+order by Autore.Cognome, Autore.Nome, Romanzo.AnnoPubblicazione
+
 
 
 
