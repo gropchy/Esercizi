@@ -58,7 +58,10 @@ from Romanzo, Autore
 where Romanzo.Autore=Autore.ID and (Autore.DataMorte is null or Autore.LuogoMorte!="Milano")
 
 
-
+/* 10. Titolo e anno di pubblicazione dei romanzi di scrittori nati a Roma */
+select Romanzo.Titolo, Romanzo.AnnoPubblicazione
+from Romanzo, Autore 
+where Romanzo.Autore=Autore.ID and Autore.LuogoNascita="Roma"
 
 
 
