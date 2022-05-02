@@ -47,6 +47,11 @@ from Romanzo, Autore
 where Romanzo.Autore=Autore.ID and Autore.DataNascita>=1901 and Autore.DataNascita<=2000
 order by Autore.Cognome, Autore.Nome, Romanzo.AnnoPubblicazione
 
+/*8-Titolo e anno di pubblicazione di romanzi di autori viventi */
+select Romanzo.Titolo, Romanzo.AnnoPubblicazione
+from Romanzo, Autore 
+where Romanzo.Autore=Autore.ID and Autore.DataMorte is null
+
 
 
 
