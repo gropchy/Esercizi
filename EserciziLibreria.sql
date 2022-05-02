@@ -31,4 +31,16 @@ where Romanzo.Autore=Autore.ID
 order by Autore.Cognome, Autore.Nome
 
 
+/*6-Autore (cioè Nome e Cognome) e Titolo dei romanzi di autori russi, 
+ordinati per cognome e nome dell’autore*/
+
+select Autore.Nome, Autore.Cognome, Romanzo.Titolo
+from Romanzo.Autore=Autore.ID and Autore.Nazionalità=’Russa’
+order by Autore.Cognome, Autore.Nome
+
+
+
+
+
+
 
