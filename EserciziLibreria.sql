@@ -94,6 +94,11 @@ from Romanzo
 where Romanzo.AnnoPubblicazione<1900 and (Romanzo.Titolo like "%Sposi%" or Romanzo.Titolo like "%sposi%")
 
 
+/*17. Romanzi di Alessandro Manzoni*/
+select Romanzo.Titolo
+from Romanzo, Autore
+where Romanzo.Autore=Autore.ID and Autore.Nome="Alessandro" and Autore.Cognome="Manzoni"
+
 
 
 
