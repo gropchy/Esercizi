@@ -24,7 +24,6 @@ where Romanzo.Autore=Autore.ID
 /*5-Autore (cioè Nome e Cognome) e Titolo di tutti i romanzi, ordinati per cognome e nome
 dell'autore*/
 
-
 select Autore.Nome, Autore.Cognome, Romanzo.Titolo
 from Romanzo, Autore
 where Romanzo.Autore=Autore.ID
@@ -51,6 +50,13 @@ order by Autore.Cognome, Autore.Nome, Romanzo.AnnoPubblicazione
 select Romanzo.Titolo, Romanzo.AnnoPubblicazione
 from Romanzo, Autore 
 where Romanzo.Autore=Autore.ID and Autore.DataMorte is null
+
+
+/* 9. Romanzi di scrittori viventi, oppure morti ma non a Milano */
+select Romanzo.Titolo
+from Romanzo, Autore
+where Romanzo.Autore=Autore.ID and (Autore.DataMorte is null or Autore.LuogoMorte!="Milano")
+
 
 
 
