@@ -63,6 +63,10 @@ select Romanzo.Titolo, Romanzo.AnnoPubblicazione
 from Romanzo, Autore 
 where Romanzo.Autore=Autore.ID and Autore.LuogoNascita="Roma"
 
+/*11. Romanzi con titolo che inizia per “guerra”*/
+select Romanzo.Titolo
+from Romanzo
+where Romanzo.Titolo like "guerra%"
 
 
 
