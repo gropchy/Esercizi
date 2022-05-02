@@ -110,4 +110,4 @@ from Romanzo, PersonaggioRomanzo, Personaggio
 where PersonaggioRomanzo.Romanzo=Romanzo.ID and PersonaggioRomanzo.Personaggio=Personaggio.ID and Personaggio.Nome="Harry" and Personaggio.Cognome="Potter"
 
 
-
+:)))))))))))))))))))
