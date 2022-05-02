@@ -73,6 +73,11 @@ select Romanzo.Titolo
 from Romanzo
 where Romanzo.Titolo like "%Sposi%"
 
+/*13. Romanzi con penultima lettera “i” nel titolo*/
+select Romanzo.Titolo
+from Romanzo
+where Romanzo.Titolo like "%i_"
+
 
 
 
