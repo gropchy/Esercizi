@@ -32,6 +32,13 @@ from Programmatore join Autore on Programmatore.codice=Autore.codice
 where linguaggio<>"Java" and categoria=10
 group by Programmatore.codice;
 
+/* Query 3b - Per ogni programmatore di cateogria 10, trovare il suo codice e l'anno in cui ha scritto il primo programma"*/
+select Programmatore.codice, min(anno)
+from Programmatore join Autore on Programmatore.codice=Autore.codice
+    join programma on Programma.id=Autore.id
+where linguaggio<>"Java" 
+group by Programmatore.codice;
+
 /* Query 4 - Trovare le coppie dei codici di programmatori che sono stati coautori di almeno un programma scritto in Python.*/
 select distinct Autore.codice as Autore, Autore2.codice as Coautore
 from Autore join Programma on Programma.id = Autore.id
