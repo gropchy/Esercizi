@@ -11,11 +11,18 @@ where Programma.anno>2000 and Programma.linguaggio="Java";
 che sono stati autori di almeno un programma scritto
 in un linguaggio diverso da Python, ordinando il
 risultato rispetto al nome dei programmatori.*/
-USE Programmatori;
 select Programmatore.nome, Programmatore.categoria
 from Autore join Programmatore on Programmatore.codice=Autore.codice
     join Programma on Programma.id=Autore.id
 where Programma.linguaggio!="Python";
 order by Programmatore.nome;
 
+/* Query 3 - Per ogni programmatore di categoria 10, Trovare il suo
+codice e l'anno in cui ha scritto il primo programma in un
+linguaggio diverso da Java.
+*/
+select Programmatore.codice, Programma.anno
+from Autore join Programmatore on Programmatore.codice=Autore.codice
+    join Programma on Programma.id=Autore.id
+where Programmatore.categoria=10 and Programma.linguaggio !="Java";
 
