@@ -19,3 +19,8 @@ where Persona.Nome = Genia.Genitore and Persona.Età > 50
 select distinct F.Genitore
 from genia F join genia G on G.Genitore = F.Figlio
 
+/* Query 5 - numero di maschi nati nel Lazio*/
+select count (*) as NumeroMaschiNelLazio
+from Persona join Città on Persona.CittàNascita=Città.Nome
+where Sesso="M" and Regione="Lazio"
+
