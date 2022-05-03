@@ -6,6 +6,11 @@ from Autore join Programmatore on Programmatore.codice=Autore.codice
     join Programma on Programma.id=Autore.id
 where Programma.anno>2000 and Programma.linguaggio="Java";
 
+/* Query 1a - altro modo */
+select Autore.codice
+from Autore join Programma on Programma.id=Autore.id
+where Programma.linguaggio="Java" and Programma.anno>=2000
+
 /* Query 2 - Trovare il nome e la categoria dei programmatori che sono stati autori di almeno un programma scritto
 in un linguaggio diverso da Python, ordinando il risultato rispetto al nome dei programmatori.*/
 select Programmatore.nome, Programmatore.categoria
@@ -20,8 +25,7 @@ from Autore join Programmatore on Programmatore.codice=Autore.codice
     join Programma on Programma.id=Autore.id
 where Programmatore.categoria=10 and Programma.linguaggio !="Java";
 
-/* Query 3 -fatto usando min*/
-USE Programmatori;
+/* Query 3a -fatto usando min*/
 select Programmatore.codice, min(anno)
 from Programmatore join Autore on Programmatore.codice=Autore.codice
     join programma on Programma.id=Autore.id
