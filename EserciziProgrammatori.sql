@@ -20,6 +20,14 @@ from Autore join Programmatore on Programmatore.codice=Autore.codice
     join Programma on Programma.id=Autore.id
 where Programmatore.categoria=10 and Programma.linguaggio !="Java";
 
+/* Query 3 -fatto usando min*/
+USE Programmatori;
+select Programmatore.codice, min(anno)
+from Programmatore join Autore on Programmatore.codice=Autore.codice
+    join programma on Programma.id=Autore.id
+where linguaggio<>"Java" and categoria=10
+group by Programmatore.codice;
+
 /* Query 4 - Trovare le coppie dei codici di programmatori che sono stati coautori di almeno un programma scritto in Python.*/
 select distinct Autore.codice as Autore, Autore2.codice as Coautore
 from Autore join Programma on Programma.id = Autore.id
