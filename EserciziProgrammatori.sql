@@ -26,3 +26,11 @@ from Autore join Programmatore on Programmatore.codice=Autore.codice
     join Programma on Programma.id=Autore.id
 where Programmatore.categoria=10 and Programma.linguaggio !="Java";
 
+/*Query 7 Per ogni linguaggio calcolare quanti sono gli
+autori dei programmi scritti in quel linguaggio.*/
+USE Programmatori;
+select COUNT(Autore.codice), Programma.linguaggio
+from Autore join Programmatore on Programmatore.codice = Autore.codice
+    join Programma on Programma.id = Autore.id
+group by Programma.linguaggio; 
+
