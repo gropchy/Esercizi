@@ -24,3 +24,10 @@ select count (*) as NumeroMaschiNelLazio
 from Persona join Città on Persona.CittàNascita=Città.Nome
 where Sesso="M" and Regione="Lazio"
 
+/*Query 6 - per ogni città, il numero di mamme nate in quella
+città*/
+select Persona.CittàNascita, count(distinct Persona.Nome)
+from Persona join Genia on Persona.Nome=Genia.Genitore
+where Persona.Sesso="F"
+group by Persona.CittàNascita
+
