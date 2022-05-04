@@ -24,8 +24,9 @@ from Scalata join Nazione on Scalata.nazione=Nazione.nome
 where Scalata.anno-Scalatore.annoNascita<20
 
 /* Query 4 - Per ogni nazione, Trovare il numero di scalate effettuate da scalatori nati in quella nazione. */
-select count(*) as numeroScalatori, nazione.nome
-from scalata join nazione on scalata.nazione=nazione.nome
-    join scalatore on scalata.scalatore=scalatore.cf
-where scalatore.nazioneNascita=scalata.nazione
-group by nazione.nome
+select count(*) as numeroScalatori, Nazione.nome
+from Scalata join Nazione on Scalata.nazione=Nazione.nome
+    join Scalatore on Scalata.scalatore=Scalatore.cf
+where Scalatore.nazioneNascita=Scalata.nazione
+group by Nazione.nome
+
