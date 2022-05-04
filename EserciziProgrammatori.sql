@@ -46,9 +46,8 @@ from Autore join Programma on Programma.id = Autore.id
 where Programma.linguaggio = "Python" and Autore.codice <> Autore2.codice and Autore.codice>Autore2.codice;
 
 
-/*Query 7 Per ogni linguaggio calcolare quanti sono gli autori dei programmi scritti in quel linguaggio.*/
-select COUNT(Autore.codice), Programma.linguaggio
-from Autore join Programmatore on Programmatore.codice = Autore.codice
-    join Programma on Programma.id = Autore.id
-group by Programma.linguaggio; 
+/* Query 7 - Per ogni linguaggio calcolare quanti sono gli autori dei programmi scritti in quel linguaggio.*/ 
+select linguaggio, count(*)/count(distinct Programma.id) as media
+from Autore join Programma on Autore.id=Programma.id
+group by Programma.linguaggio
 
