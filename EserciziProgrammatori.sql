@@ -45,6 +45,12 @@ from Autore join Programma on Programma.id = Autore.id
     join Autore Autore2 on Autore2.id = Programma.id
 where Programma.linguaggio = "Python" and Autore.codice <> Autore2.codice and Autore.codice>Autore2.codice;
 
+/* Query 6 - Per ogni programmatore e per ogni anno calcolare il numero di programmi scritti da quel programmatore
+in quell’anno, mostrando codice del programmatore, anno e numero di programmi scritti.*/
+select codice, anno, count(*)
+from Autore, Programma
+where Autore.id=Programma.id
+group by codice, anno
 
 /* Query 7 - Per ogni linguaggio calcolare quanti sono gli autori dei programmi scritti in quel linguaggio.*/ 
 select linguaggio, count(*)/count(distinct Programma.id) as media
