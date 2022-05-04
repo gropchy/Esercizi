@@ -45,6 +45,13 @@ from Autore join Programma on Programma.id = Autore.id
     join Autore Autore2 on Autore2.id = Programma.id
 where Programma.linguaggio = "Python" and Autore.codice <> Autore2.codice and Autore.codice>Autore2.codice;
 
+/* Query 5- Calcolare il codice ed il nome dei programmatori che hanno scritto solo programmi Java. */
+select p.nome, p.codice, pr.linguaggio
+from Programmatore p join Autore a on p.codice = a.codice
+    join Programma pr on pr.id = a.id
+where pr.linguaggio = "Java";
+group by pr.linguaggio;
+
 /* Query 6 - Per ogni programmatore e per ogni anno calcolare il numero di programmi scritti da quel programmatore
 in quell’anno, mostrando codice del programmatore, anno e numero di programmi scritti.*/
 select codice, anno, count(*)
