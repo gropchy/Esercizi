@@ -37,5 +37,5 @@ select distinct Scalata.scalatore
 from Scalata 
 where Scalata.scalatore in (select Scalatore.cf 
     from Scalatore 
-    where Scalata.anno-Scalatore.annoNascita<20
+    where Scalata.anno-Scalatore.annoNascita<20 and Scalatore.nazioneNascita != Scalata.nazione
     )
