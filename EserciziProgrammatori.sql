@@ -71,3 +71,9 @@ select linguaggio, count(*)/count(distinct Programma.id) as media
 from Autore join Programma on Autore.id=Programma.id
 group by Programma.linguaggio
 
+/* Esercizio extra: nome del programma che ha scritto più programmi*/
+select Autore.codice, count(*) as apps
+from Autore join Programmatore on Autore.codice = Programmatore.codice
+group by Autore.codice
+order by apps desc
+limit 1
