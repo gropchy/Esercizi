@@ -30,3 +30,12 @@ from Scalata join Nazione on Scalata.nazione=Nazione.nome
 where Scalatore.nazioneNascita=Scalata.nazione
 group by Nazione.nome
 
+/* Query 9 - Calcolare gli scalatori tali che tutte le scalate che hanno effettuato nella nazione di nascita le hanno
+effettuate quando meno di 20 anni. */
+
+select distinct Scalata.scalatore
+from Scalata 
+where Scalata.scalatore in (select Scalatore.cf 
+    from Scalatore 
+    where Scalata.anno-Scalatore.annoNascita<20
+    )
