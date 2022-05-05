@@ -33,7 +33,7 @@ group by Nazione.nome
 /* Query 9 - Calcolare gli scalatori tali che tutte le scalate che hanno effettuato nella nazione di nascita le hanno
 effettuate quando meno di 20 anni. */
 
-select distinct Scalata.scalatore
+select Scalata.scalatore
 from Scalata 
 where Scalata.scalatore in (select Scalatore.cf 
     from Scalatore 
